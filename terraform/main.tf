@@ -23,10 +23,11 @@ terraform {
       source  = "hashicorp/helm"
       version = "~> 2.12"
     }
-    null = {
-      source  = "hashicorp/null"
-      version = "~> 3.2"
-    }
+   # Use this provider for situations where you wish if terrafrom could just run a shell command to do something, e.g running specif kubectl commands or going to sleep until a resource is fully ready 
+   # null = {
+   #   source  = "hashicorp/null"
+   #   version = "~> 3.2"
+   # }
   }
 }
 

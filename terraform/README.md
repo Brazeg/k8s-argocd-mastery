@@ -6,33 +6,33 @@ This directory contains the Infrastructure as Code (IaC) for the learning lab.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    INFRASTRUCTURE MANAGED BY TERRAFORM                       │
+│                    INFRASTRUCTURE MANAGED BY TERRAFORM                      │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  ┌──────────────────────────────────────────────────────────────────────┐   │
-│  │                        Kind Cluster                                   │   │
-│  │                                                                       │   │
-│  │  • Kubernetes control plane                                           │   │
-│  │  • NodePort mappings (30080-30084)                                    │   │
-│  │  • kubeconfig exported                                                │   │
-│  │                                                                       │   │
+│  │                        Kind Cluster                                  │   │
+│  │                                                                      │   │
+│  │  • Kubernetes control plane                                          │   │
+│  │  • NodePort mappings (30080-30084)                                   │   │
+│  │  • kubeconfig exported                                               │   │
+│  │                                                                      │   │
 │  │  ┌────────────────────────────────────────────────────────────────┐  │   │
-│  │  │                      ArgoCD (Helm)                              │  │   │
-│  │  │                                                                 │  │   │
-│  │  │  • argocd-server (NodePort 30080)                               │  │   │
-│  │  │  • argocd-repo-server                                           │  │   │
-│  │  │  • argocd-application-controller                                │  │   │
-│  │  │  • argocd-applicationset-controller                             │  │   │
-│  │  │  • argocd-redis                                                 │  │   │
-│  │  │                                                                 │  │   │
+│  │  │                      ArgoCD (Helm)                             │  │   │
+│  │  │                                                                │  │   │
+│  │  │  • argocd-server (NodePort 30080)                              │  │   │
+│  │  │  • argocd-repo-server                                          │  │   │
+│  │  │  • argocd-application-controller                               │  │   │
+│  │  │  • argocd-applicationset-controller                            │  │   │
+│  │  │  • argocd-redis                                                │  │   │
+│  │  │                                                                │  │   │
 │  │  └────────────────────────────────────────────────────────────────┘  │   │
-│  │                                                                       │   │
+│  │                                                                      │   │
 │  │  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌─────────────┐  │   │
-│  │  │ NS: monitoring│ │ NS: apps     │ │ NS: dev      │ │ NS: staging │  │   │
+│  │  │ NS: monitoring│ │ NS: apps     │ │ NS: dev      │ │ NS: staging   │   │
 │  │  └──────────────┘ └──────────────┘ └──────────────┘ └─────────────┘  │   │
-│  │                                                                       │   │
+│  │                                                                      │   │
 │  └──────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 
 

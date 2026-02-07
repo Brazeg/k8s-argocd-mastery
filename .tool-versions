@@ -1,0 +1,7 @@
+kubectl 1.29.0
+kind 0.20.0
+helm 3.14.0
+terraform 1.7.0
+argocd 2.10.0
+k9s 0.31.7
+yq 4.40.5

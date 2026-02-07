@@ -1,0 +1,78 @@
+# Grafana - Visualization
+grafana:
+  service:
+    type: NodePort
+    nodePort: 30081
+  adminUser: admin
+  adminPassword: admin
+  
+  datasources:
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+        - name: Loki
+          type: loki
+          url: http://lgtm-stack-loki-gateway:80
+          access: proxy
+          isDefault: false
+        - name: Tempo
+          type: tempo
+          url: http://lgtm-stack-tempo:3100
+          access: proxy
+          uid: tempo
+
+# Loki - Logs
+loki:
+  deploymentMode: SingleBinary
+  loki:
+    auth_enabled: false
+    commonConfig:
+      replication_factor: 1
+    storage:
+      type: filesystem
+  singleBinary:
+    replicas: 1
+    resources:
+      limits:
+        cpu: 500m
+        memory: 512Mi
+      requests:
+        cpu: 100m
+        memory: 256Mi
+  backend:
+    replicas: 0
+  read:
+    replicas: 0
+  write:
+    replicas: 0
+  gateway:
+    enabled: true
+    replicas: 1
+
+# Tempo - Traces
+tempo:
+  tempo:
+    receivers:
+      otlp:
+        protocols:
+          grpc:
+            endpoint: "0.0.0.0:4317"
+          http:
+            endpoint: "0.0.0.0:4318"
+      jaeger:
+        protocols:
+          thrift_http:
+            endpoint: "0.0.0.0:14268"
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 100m
+      memory: 256Mi
+
+# Promtail - Log collector
+promtail:
+  config:
+    clients:
+      - url: http://lgtm-stack-loki-gateway:80/loki/api/v1/push

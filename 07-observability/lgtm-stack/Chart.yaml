@@ -1,0 +1,18 @@
+apiVersion: v2
+name: lgtm-stack
+description: Grafana LGTM Stack for observability learning
+version: 1.0.0
+
+dependencies:
+  - name: grafana
+    version: "7.0.17"
+    repository: "https://grafana.github.io/helm-charts"
+  - name: loki
+    version: "5.41.4"
+    repository: "https://grafana.github.io/helm-charts"
+  - name: tempo
+    version: "1.7.1"
+    repository: "https://grafana.github.io/helm-charts"
+  - name: promtail
+    version: "6.15.3"
+    repository: "https://grafana.github.io/helm-charts"

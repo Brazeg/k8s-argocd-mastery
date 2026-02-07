@@ -1,0 +1,4 @@
+apiVersion: v2
+name: demo-app
+description: Simple demo app for ArgoCD learning
+version: 1.0.0

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:{{ .Values.imageTag }}
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "100m"
+            limits:
+              memory: "128Mi"
+              cpu: "200m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  type: {{ .Values.serviceType }}
+  selector:
+    app: {{ .Release.Name }}
+  ports:
+    - port: 80
+      targetPort: 80
+      {{- if eq .Values.serviceType "NodePort" }}
+      nodePort: {{ .Values.nodePort }}
+      {{- end }}

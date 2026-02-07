@@ -1,0 +1,4 @@
+replicas: 2
+imageTag: "1.24"
+serviceType: ClusterIP
+nodePort: 30084

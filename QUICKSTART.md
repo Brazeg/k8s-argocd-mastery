@@ -178,5 +178,4 @@ Terraform state              ~1 MB
 ─────────────────────────────────
 TOTAL                        ~8 GB
 
-Your 60 GB: ✅ Plenty of room!
 ```

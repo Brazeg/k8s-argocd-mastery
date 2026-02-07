@@ -1,6 +1,6 @@
 <img src="img/Lab image.png" alt="Lab Image" title="Lab Image" width="800"/>
 
-# Kubernetes + ArgoCD Mastery Lab
+# Terraform + Kubernetes + Grafana LGTM + ArgoCD Mastery Lab
 
 A hands-on learning path from beginner to advanced, featuring **Infrastructure as Code** with Terraform and **GitOps** with ArgoCD.
 

@@ -48,7 +48,7 @@ resource "helm_release" "argocd" {
         service = {
           type = "NodePort"
           nodePortHttp = var.node_port
-          nodePortHttps = var.node_port
+          nodePortHttps = var.node_port_https
         }
         # Disable TLS for local development (simpler access)
         extraArgs = ["--insecure"]

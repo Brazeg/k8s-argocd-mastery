@@ -13,6 +13,7 @@ node_ports = [
   { container_port = 30082, host_port = 30082 },  # Demo app
   { container_port = 30083, host_port = 30083 },  # Additional
   { container_port = 30084, host_port = 30084 },  # Additional
+  { container_port = 30090, host_port = 30090 },
 ]
 
 argocd_node_port = 30080

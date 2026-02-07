@@ -15,3 +15,9 @@ variable "node_port" {
   type        = number
   default     = 30080
 }
+
+variable "node_port_https" {
+  description = "NodePort for ArgoCD server"
+  type        = number
+  default     = 30090
+}

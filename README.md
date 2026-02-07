@@ -1,4 +1,4 @@
-<img src="img/Lab Image.png" alt="Lab Image" title="Lab Image" width="800"/>
+<img src="img/Lab image.png" alt="Lab Image" title="Lab Image" width="800"/>
 
 # Kubernetes + ArgoCD Mastery Lab
 

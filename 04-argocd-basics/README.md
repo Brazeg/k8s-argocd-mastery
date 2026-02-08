@@ -195,6 +195,8 @@ Let's use a public example repository first.
    - **Namespace**: `guestbook`
 4. Click **CREATE**
 
+Optional: try that again put to deploy the sock-shop app (to dedicated namespace), simply by changing the Path unter the Repository
+
 ### Observe the Application
 
 1. The app appears with status **"OutOfSync"**
@@ -217,6 +219,8 @@ kubectl get svc -n guestbook
 ```
 
 ---
+
+
 
 ## Exercise 4.3: Create Application via CLI
 

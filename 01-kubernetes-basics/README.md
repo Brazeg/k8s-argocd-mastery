@@ -190,12 +190,15 @@ kubectl apply -f exercises/pod-multi-container.yaml
 # See both containers
 kubectl get pod multi-container-pod
 
+# Generate a traffic to log
+kubectl exec -it multi-container-pod -c nginx -- curl localhost
+
 # Logs from specific container
 kubectl logs multi-container-pod -c nginx
 kubectl logs multi-container-pod -c log-reader
 
 # Exec into specific container
-kubectl exec -it multi-container-pod -c nginx -- /bin/bash
+kubectl exec -it multi-container-pod -c nginx -- /bin/sh
 ```
 
 ---
